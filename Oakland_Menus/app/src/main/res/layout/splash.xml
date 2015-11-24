@@ -2,7 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/oulogo"
+    android:background="@drawable/ougrizzlogo"
     android:orientation="vertical">
+
+    <ProgressBar
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:id="@+id/progressBar"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="0dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginBottom="500dp"
+        android:layout_marginTop="400dp" />
 
 </LinearLayout>
