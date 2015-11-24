@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:title="@string/action_settings"
@@ -11,7 +12,9 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:background="#9A844A"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:showIn="@layout/activity_main" tools:context=".MainActivity"
+    tools:showIn="@layout/"
+    tools:context=".MainActivity"
+
 
     >
 
@@ -19,32 +22,43 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:id="@+id/restaurants"
-        android:background="@drawable/restauranticon"
+        android:background="@drawable/restaurant_icon"
         android:contentDescription="@string/restaurants"
+        android:layout_marginTop="51dp"
         android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/Map"
-        android:layout_alignStart="@+id/Map"
-        android:layout_marginTop="50dp" />
+        android:layout_toRightOf="@+id/Map"
+        android:layout_toEndOf="@+id/Map" />
 
     <ImageButton
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:id="@+id/Coffee"
-        android:background="@drawable/coffeeimage"
+        android:background="@drawable/coffee_image"
         android:contentDescription="@string/Coffee"
-        android:layout_below="@+id/restaurants"
-        android:layout_alignLeft="@+id/restaurants"
-        android:layout_alignStart="@+id/restaurants"
-        android:layout_marginTop="50dp" />
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/Map"
+        android:layout_toEndOf="@+id/Map" />
 
     <ImageButton
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:id="@+id/Map"
-        android:background="@drawable/mapicon"
-        android:layout_marginTop="50dp"
+        android:background="@drawable/map_icon"
         android:contentDescription="@string/Maps"
-        android:layout_below="@+id/Coffee"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="28dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="29dp" />
+
+    <ImageButton
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/Rating"
+        android:background="@drawable/black_star_logo"
+        android:layout_alignTop="@+id/Map"
+        android:layout_toRightOf="@+id/Coffee"
+        android:layout_toEndOf="@+id/Coffee" />
 
 </RelativeLayout>
