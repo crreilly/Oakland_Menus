@@ -20,7 +20,7 @@ public class CoffeeMenuActivity extends Activity {
         return true;
     }
 
-    public boolean onOptionsItemSelected(MenuItem item) {
+    /*public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.starbucks:
                 startActivity(new Intent(this, starbucks.class));
@@ -35,6 +35,6 @@ public class CoffeeMenuActivity extends Activity {
             default:
                 return super.onOptionsItemSelected(item);
         }
-    }
+    }*/
 }
 
