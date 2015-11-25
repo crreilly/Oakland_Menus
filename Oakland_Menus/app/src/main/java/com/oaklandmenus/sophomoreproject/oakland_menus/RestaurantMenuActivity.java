@@ -6,11 +6,12 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-public class MainActivity extends Activity {
+
+public class RestaurantMenuActivity extends Activity {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_menu_layout);
+        setContentView(R.layout.restaurantmenu_layout);
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -21,17 +22,15 @@ public class MainActivity extends Activity {
 
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.restaurants:
-                startActivity(new Intent(this, RestaurantMenuActivity.class));
+            case R.id.Chick:
+                startActivity(new Intent(this, CkFilAMenu.class));
                 return true;
-            case R.id.Coffee:
-                startActivity(new Intent(this, CoffeeMenuActivity.class));
+            /*case R.id.Subway:
+                startActivity(new Intent(this, Subway.class));
                 return true;
-            //case R.id.Map:
-                //startActivity(new Intent(this, Maps.class));
-           // case R.id.ratings:
-                //startActivity(new Intent(this, RatingActivity.class));
-                //return true;
+            case R.id.Other:
+                startActivity(new Intent(this, Other.class));
+                return true;*/
             default:
                 return super.onOptionsItemSelected(item);
         }

@@ -6,11 +6,12 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-public class MainActivity extends Activity {
+
+public class CoffeeMenuActivity extends Activity {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_menu_layout);
+        setContentView(R.layout.coffeemenu_layout);
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -19,21 +20,21 @@ public class MainActivity extends Activity {
         return true;
     }
 
-    public boolean onOptionsItemSelected(MenuItem item) {
+    /*public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.restaurants:
-                startActivity(new Intent(this, RestaurantMenuActivity.class));
+            case R.id.starbucks:
+                startActivity(new Intent(this, starbucks.class));
                 return true;
-            case R.id.Coffee:
-                startActivity(new Intent(this, CoffeeMenuActivity.class));
+            case R.id.einstein:
+                startActivity(new Intent(this, einstein.class));
                 return true;
-            //case R.id.Map:
-                //startActivity(new Intent(this, Maps.class));
-           // case R.id.ratings:
-                //startActivity(new Intent(this, RatingActivity.class));
-                //return true;
+            case R.id.other:
+                startActivity(new Intent(this, other.class));
+                return true;
+
             default:
                 return super.onOptionsItemSelected(item);
         }
-    }
+    }*/
 }
+

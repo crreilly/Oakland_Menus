@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+Name(s): Calvin Reilly
+Project: CSE280 Group Project
+Description: the item view template to be used in construction of the listview, this format is what
+will populate the listview. This is not specific to any activity and will be used for all food menu
+activities.
+Last Modified: November 18, 2015
+-->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/item_chkBox"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="30dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/unchecked_checkbox"
+        android:contentDescription=""
+        android:maxHeight="40dp"
+        android:maxWidth="40dp"
+        android:adjustViewBounds="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Item description here"
+        android:id="@+id/item_foodName"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Calories: "
+        android:id="@+id/textCal"
+        android:layout_below="@+id/item_foodName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Number of calories"
+        android:id="@+id/item_foodCal"
+        android:layout_below="@+id/item_foodName"
+        android:layout_toRightOf="@+id/textCal"
+        android:layout_toEndOf="@+id/textCal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Price: $"
+        android:id="@+id/txtPrice"
+        android:layout_below="@+id/textCal"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Price of item"
+        android:id="@+id/item_foodPrice"
+        android:layout_below="@+id/textCal"
+        android:layout_toRightOf="@+id/txtPrice"
+        android:layout_toEndOf="@+id/txtPrice" />
+</RelativeLayout>
