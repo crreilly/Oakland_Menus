@@ -23,14 +23,14 @@ public class RestaurantMenuActivity extends Activity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.Chick:
-                startActivity(new Intent(this, Chick.class));
+                startActivity(new Intent(this, CkFilAMenu.class));
                 return true;
-            case R.id.Subway:
+            /*case R.id.Subway:
                 startActivity(new Intent(this, Subway.class));
                 return true;
             case R.id.Other:
                 startActivity(new Intent(this, Other.class));
-                return true;
+                return true;*/
             default:
                 return super.onOptionsItemSelected(item);
         }

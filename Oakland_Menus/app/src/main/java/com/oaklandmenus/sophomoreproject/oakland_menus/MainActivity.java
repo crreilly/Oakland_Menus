@@ -29,9 +29,9 @@ public class MainActivity extends Activity {
                 return true;
             //case R.id.Map:
                 //startActivity(new Intent(this, Maps.class));
-            case R.id.ratings:
-                startActivity(new Intent(this, RatingActivity.class));
-                return true;
+           // case R.id.ratings:
+                //startActivity(new Intent(this, RatingActivity.class));
+                //return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
