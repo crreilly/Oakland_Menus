@@ -1,5 +1,6 @@
 package com.oaklandmenus.sophomoreproject.oakland_menus;
 
+
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.app.Activity;
@@ -12,31 +13,24 @@ import android.widget.Toast;
 import android.widget.RatingBar.OnRatingBarChangeListener;
 import java.text.DecimalFormat;
 
-
-public class RatingActivity extends Activity implements OnRatingBarChangeListener  {
-
+public class RatingActivity2 extends Activity implements RatingBar.OnRatingBarChangeListener {
 
     RatingBar R_Bar ;
     int count;
     float curRate;
     Boolean val = true;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.ratings_layout);
+        setContentView(R.layout.ratings_layout2);
 
-        R_Bar = (RatingBar) findViewById(R.id.ratingBar);
-
+        R_Bar = (RatingBar) findViewById(R.id.ratingBar2);
 
         R_Bar.setOnRatingBarChangeListener(this);
 
 
-
-
-
-        SharedPreferences sharePref = PreferenceManager.getDefaultSharedPreferences(RatingActivity.this);
+        SharedPreferences sharePref = PreferenceManager.getDefaultSharedPreferences(RatingActivity2.this);
         curRate = sharePref.getFloat("Get_Rating", 0.0f);
 
 
@@ -47,14 +41,13 @@ public class RatingActivity extends Activity implements OnRatingBarChangeListene
             R_Bar.setRating(curRate);
         }
 
-        final Button switchact1 =(Button)findViewById(R.id.btn1);
+        final Button switchact = (Button) findViewById(R.id.btn3);
 
-
-        switchact1.setOnClickListener(new View.OnClickListener() {
+        switchact.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
-                Intent act1 = new Intent(view.getContext(), RatingActivity2.class);
+                Intent act1 = new Intent(view.getContext(),RatingActivity3.class);
                 startActivity(act1);
 
 
@@ -62,14 +55,13 @@ public class RatingActivity extends Activity implements OnRatingBarChangeListene
 
         });
 
-        final Button switchact2 =(Button)findViewById(R.id.btn2);
-
+        final Button switchact2 = (Button) findViewById(R.id.btn4);
 
         switchact2.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
-                Intent act2 = new Intent(view.getContext(), RatingActivity3.class);
+                Intent act2 = new Intent(view.getContext(),RatingActivity.class);
                 startActivity(act2);
 
 
@@ -77,15 +69,13 @@ public class RatingActivity extends Activity implements OnRatingBarChangeListene
 
         });
 
-
-        final Button switchact3 =(Button)findViewById(R.id.btn9);
-
+        final Button switchact3 = (Button) findViewById(R.id.btn12);
 
         switchact3.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
-                Intent act3 = new Intent(view.getContext(), RatingActivity4.class);
+                Intent act3 = new Intent(view.getContext(),RatingActivity4.class);
                 startActivity(act3);
 
 
@@ -93,14 +83,13 @@ public class RatingActivity extends Activity implements OnRatingBarChangeListene
 
         });
 
-        final Button switchact4 =(Button)findViewById(R.id.btn32);
-
+        final Button switchact4 = (Button) findViewById(R.id.btn30);
 
         switchact4.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
-                Intent act4 = new Intent(view.getContext(), RatingActivity5.class);
+                Intent act4 = new Intent(view.getContext(),RatingActivity5.class);
                 startActivity(act4);
 
 
@@ -109,7 +98,12 @@ public class RatingActivity extends Activity implements OnRatingBarChangeListene
         });
 
 
+
+
+
+
     }
+
 
     public void onRatingChanged (RatingBar ratingBar,float rating,
                                  boolean fromUser){
@@ -127,7 +121,7 @@ public class RatingActivity extends Activity implements OnRatingBarChangeListene
 
 
         // Showing a toast of current rating
-        Toast.makeText(RatingActivity.this,
+        Toast.makeText(RatingActivity2.this,
                 "New Rating: " + curRate, Toast.LENGTH_SHORT)
                 .show();
 
@@ -135,7 +129,7 @@ public class RatingActivity extends Activity implements OnRatingBarChangeListene
 
 
 
-        SharedPreferences sharePref = PreferenceManager.getDefaultSharedPreferences(RatingActivity.this);
+        SharedPreferences sharePref = PreferenceManager.getDefaultSharedPreferences(RatingActivity2.this);
         SharedPreferences.Editor edit = sharePref.edit();
         edit.putFloat("Get_Rating", curRate);
 
@@ -147,9 +141,6 @@ public class RatingActivity extends Activity implements OnRatingBarChangeListene
 
 
     }
-
-
-
 
 
 

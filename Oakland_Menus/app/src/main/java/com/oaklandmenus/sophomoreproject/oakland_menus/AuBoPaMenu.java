@@ -1,15 +1,8 @@
-//Name(s): Calvin Reilly
-//Project: CSE280 Group Project
-//Description: The main java class for the CkFilAMenu activity, this will construct the listview
-//seen in the UI for the Chick-fil-A menu and will hold all values associated with the menu items
-//it will also send selected values to the price and nutrition calculator.
-//Last Modified: November 27, 2015
-
 package com.oaklandmenus.sophomoreproject.oakland_menus;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -18,29 +11,42 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import java.util.List;
-import java.util.ArrayList;
 
-public class CkFilAMenu extends AppCompatActivity
+import java.util.ArrayList;
+import java.util.List;
+
+public class AuBoPaMenu extends AppCompatActivity
 {
 
-    //------------------------ Chick-fil-A Arrays --------------------------------------------------
-    String[] foodArray = {"Grilled Chicken Sandwich","Chick-fil-A Sandwich","Spicy Chicken Sandwich"
-            ,"Chick-n-Strips (3-count)","Chick-n-Strips (4-count)","Chick-fil-A Nuggets (8-count)"
-            ,"Chick-fil-A Nuggets (12-count)","Grilled Chicken Cool Wrap","Grilled Market Salad"
-            ,"Waffle Potato Fries","Fruit Cup","Yogurt Parfait (Granola)","Yogurt Parfait (Chocolate)"
-            ,"Lemonade","Iced Tea","Hot Coffee"};
 
-    int[] caloriesArray = {320,440,490,360,470,270,400,360,240,390,70,120,150,230,130,5};
+    //------------------------ Subway Arrays -------------------------------------------------------
+    String[] foodArray = {"Egg & Cheddar","Egg & Cheddar & Avocado","2 Egg Sanwhich & Cheddar",
+            "Smoked Salmon Wasabi","Toasted Bagel & Cream Cheese","Hot Oatmeal","Fruit Cup","Yogurt Parfait",
+            "Orange Juice","Turkey Club (Sandwich)","Caprese (S)","Black Bean Burger (S)",
+            "Roast Beef & Herb Cheese (S)","Turkey & Avocado (S)","Grilled Chicken Avocado (S)",
+            "Sirloin & Asiago (S)","Turkey Cubano (S)","Tuscan Grilled Cheese (S)","Chicken Pomodoro (S)",
+            "Newport Turkey (S)","Classic Chicken Salad (S)","Turkey & Swiss (S)","Tuna Salad (S)",
+            "Ham & Cheddar (S)","Roast Beef & Cheddar (S)","Grilled Chicken (S)","BLT (S)",
+            "Thai Peanut Chicken (wrap)","Chicken Caesar (wrap)","Waldorf Turkey (wrap)",
+            "Veggie & Hummus (wrap)","Napa Chicken & Avacado (wrap)","Chicken Cobb Avocado (salad)",
+            "Vegetarian Deluxe (salad)","Chicken Caeser Asiago (salad)","Asian Chicken & Noodle (salad)",
+            "Harvest Turkey (salad)","Southwest Chicken (salad)","Farm Stand Steak (salad)","Daily Soup",
+            "Cookies/Brownies","Muffins","Croissants","Cakes/Cupcakes","Breads"};
 
-    double[] priceArray = {4.10,3.35,3.70,3.55,4.79,3.25,4.80,5.40,7.09,1.85,2.85,2.55,2.55,
-            1.79,1.79,2.09};
+    int[] caloriesArray = {210,310,480,400,560,370,140,380,220,620,660,700,510,690,650,630,590,620,
+            660,790,440,750,520,640,510,470,420,530,600,670,660,490,650,400,660,680,640,590,580,250,
+            250,250,250,250,250};
+
+    double[] priceArray = {3.55,1.75,2.25,1.75,4.00,2.50,1.99,1.75,2.99,3.00,1.25,6.50,2.89,4.00,3.00,2.50,1.99,1.99,2.00,3.00,1.50,1.20,1.00,1.00,2.00,3.00,2.00,2.00,1.00,1.99,2.09,2.99,3.00,1.99,1.00,2.00,
+            1.00,.50,2.00,1.99,1.00,3.00,.99,.99,1.00};
     //----------------------------------------------------------------------------------------------
 
 
     //array will be false unless user wants an item, then that item's false will turn into a true
-    boolean[] ItemYesNo = {false,false,false,false,false,false,false,false,false,false,false,false
-            ,false,false,false,false};
+    boolean[] ItemYesNo = {false,false,false,false,false,false,false,false,false,false,false,false,
+            false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,
+            false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,
+            false,false,false};
 
     //array holding the picture id (either checked or unchecked)
     int[] picId = {R.drawable.unchecked_checkbox, R.drawable.unchecked_checkbox, R.drawable.unchecked_checkbox,
@@ -48,7 +54,16 @@ public class CkFilAMenu extends AppCompatActivity
             R.drawable.unchecked_checkbox, R.drawable.unchecked_checkbox, R.drawable.unchecked_checkbox,
             R.drawable.unchecked_checkbox, R.drawable.unchecked_checkbox, R.drawable.unchecked_checkbox,
             R.drawable.unchecked_checkbox, R.drawable.unchecked_checkbox, R.drawable.unchecked_checkbox,
-            R.drawable.unchecked_checkbox,};
+            R.drawable.unchecked_checkbox, R.drawable.unchecked_checkbox, R.drawable.unchecked_checkbox,
+            R.drawable.unchecked_checkbox, R.drawable.unchecked_checkbox, R.drawable.unchecked_checkbox,
+            R.drawable.unchecked_checkbox, R.drawable.unchecked_checkbox, R.drawable.unchecked_checkbox,
+            R.drawable.unchecked_checkbox, R.drawable.unchecked_checkbox, R.drawable.unchecked_checkbox,
+            R.drawable.unchecked_checkbox, R.drawable.unchecked_checkbox, R.drawable.unchecked_checkbox,
+            R.drawable.unchecked_checkbox, R.drawable.unchecked_checkbox, R.drawable.unchecked_checkbox,
+            R.drawable.unchecked_checkbox, R.drawable.unchecked_checkbox, R.drawable.unchecked_checkbox,
+            R.drawable.unchecked_checkbox, R.drawable.unchecked_checkbox, R.drawable.unchecked_checkbox,
+            R.drawable.unchecked_checkbox, R.drawable.unchecked_checkbox, R.drawable.unchecked_checkbox,
+            R.drawable.unchecked_checkbox,R.drawable.unchecked_checkbox,R.drawable.unchecked_checkbox};
 
     private List<foodItem> myFood = new ArrayList<foodItem>();
 
@@ -122,6 +137,7 @@ public class CkFilAMenu extends AppCompatActivity
                 }
             }
         });
+
     }
 
     //-------------------------------------private methods/classes--------------------------------------
@@ -131,7 +147,7 @@ public class CkFilAMenu extends AppCompatActivity
         int itemCount = 0;
 
         //generates n items into the foodlist, where n is the amount of items in the food array
-        //which was defined at the top in "Chick-fil-A arrays"
+        //which was defined at the top in "subway arrays"
         while (itemCount < foodArray.length)
         {
             myFood.add(new foodItem(foodArray[itemCount], caloriesArray[itemCount],
@@ -140,6 +156,7 @@ public class CkFilAMenu extends AppCompatActivity
         }
     }
 
+    //uses the template found in food_item_view to generate a list of templates by using myListAdapter
     private void populateListView()
     {
         ArrayAdapter<foodItem> adapter = new MyListAdapter();
@@ -147,11 +164,12 @@ public class CkFilAMenu extends AppCompatActivity
         list.setAdapter(adapter);
     }
 
+    //dynamically populates the list based off of the items in the arrayList
     private class MyListAdapter extends ArrayAdapter<foodItem>
     {
         public MyListAdapter()
         {
-            super(CkFilAMenu.this, R.layout.food_item_view, myFood);
+            super(AuBoPaMenu.this, R.layout.food_item_view, myFood);
         }
 
         @Override

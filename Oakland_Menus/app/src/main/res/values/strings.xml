@@ -7,5 +7,7 @@
     <string name="Coffee"></string>
     <string name="Maps"></string>
     <string name="appbar_scrolling_view_behavior"></string>
+    <string name="title_activity_subway_menu">SubwayMenu</string>
+    <string name="title_activity_price_and_cal">PriceAndCal</string>
 
 </resources>

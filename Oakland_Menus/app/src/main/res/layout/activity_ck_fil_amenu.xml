@@ -14,7 +14,8 @@ Last Modified: November 18, 2015
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".CkFilAMenu">
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".CkFilAMenu"
+    android:background="@drawable/appbackground">
 
     <Button
         style="?android:attr/buttonStyleSmall"

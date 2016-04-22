@@ -2,11 +2,28 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.oaklandmenus.sophomoreproject.oakland_menus" >
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/oulogo"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme"
+        android:screenOrientation="portrait"
+        >
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="@string/google_maps_key" />
 
         <activity
             android:name=".SplashActivity"
@@ -18,14 +35,44 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="MainActivity"
-            android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
+            android:name=".MainActivity">
         </activity>
+        <activity
+            android:name=".RestaurantMenuActivity">
+        ></activity>
+        <activity
+            android:name=".CkFilAMenu">
+            ></activity>
+        <activity
+            android:name=".CoffeeMenuActivity">
+            ></activity>
+        <activity
+            android:name=".RatingActivity">
+            ></activity>
+        <activity
+            android:name=".SubwayMenu">
+        </activity>
+        <activity
+            android:name=".EnBrosMenu">
+        </activity>
+        <activity
+            android:name=".PriceAndCal"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".RatingActivity2">
+        </activity>
+        <activity
+            android:name=".RatingActivity3">
+        </activity>
+        <activity android:name=".RatingActivity4"> </activity>
+
+        <activity android:name=".RatingActivity5"> </activity>
+        <activity
+            android:name=".MapsActivity">
+    </activity>
+        <activity android:name=".AuBoPaMenu"> </activity>
+        <activity android:name=".PandaEMenu"> </activity>
 
     </application>
 

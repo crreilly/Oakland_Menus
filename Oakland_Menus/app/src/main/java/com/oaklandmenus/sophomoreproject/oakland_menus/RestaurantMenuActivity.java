@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
-import android.view.MenuItem;
+import android.view.View;
 
 public class RestaurantMenuActivity extends Activity {
 
@@ -20,19 +20,28 @@ public class RestaurantMenuActivity extends Activity {
         return true;
     }
 
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
+    public void buttonOnClick(View view)
+    {
+
+        switch (view.getId())
+        {
+
             case R.id.Chick:
                 startActivity(new Intent(this, CkFilAMenu.class));
-                return true;
-            /*case R.id.Subway:
-                startActivity(new Intent(this, Subway.class));
-                return true;
-            case R.id.Other:
-                startActivity(new Intent(this, Other.class));
-                return true;*/
-            default:
-                return super.onOptionsItemSelected(item);
+
+                break;
+
+            case R.id.Subway:
+                startActivity(new Intent(this, SubwayMenu.class));
+
+                break;
+
+            case R.id.Panda:
+                startActivity(new Intent(this, PandaEMenu.class));
+
+                break;
+
+
         }
     }
 }
